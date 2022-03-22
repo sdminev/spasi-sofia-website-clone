@@ -1,0 +1,50 @@
+{{ define "main" }}
+  <div class="container p-4">
+    {{ .Content }}
+  </div>
+
+
+  <div class="subject-status-container bg-green-400 p-4 mt-4">
+    <div class="subject-status">
+      <span class="subject-status-indicator {{ .Params.status }}"></span>
+      <span class="subject-status-description">
+          {{ if eq .Params.status "accomplished" }}
+            Тази мярка е реализирана
+          {{ else }}
+            Тази мярка не е реализирана
+          {{ end }}
+      </span>
+    </div>
+  </div>
+
+  <div class="subject-summary-of-proposals document-list">
+    <span>Внесли сме {{ len .Params.proposals.documents }} доклада за {{ .Params.proposals.subject }}</span>
+      <ul>
+	      {{ range .Params.proposals.documents }}
+	        <li><a href="{{ .link }}">{{ .title }}</a></li>
+	      {{ end }}
+      </ul>
+  </div>
+
+
+  <div class="timeline p-12 bg-gray-200" >
+    <ul class="relative p-0 flex flex-col">
+      {{ range .Pages }}
+        <li data-pseudo-content-before="before" class="timeline-item">
+          <div class="box bg-white p-8">
+            <h3 class="font-sans font-bold text-xl text-gray-600 mb-5" >{{ .Title }}</h3>
+            <span class="font-sans block mb-2 text-gray-400">{{.Date.Format "02.01.2006"}}</span>
+            {{ if isset .Params "type" }}
+            {{ partial .Params.type . }}
+            {{ else }}
+            <p>{{.Content}}</p>
+            {{ end }}
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+
+

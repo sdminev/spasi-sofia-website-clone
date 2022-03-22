@@ -1,0 +1,48 @@
+<div class="vote-post-container">
+  <p>{{ .Content }}</p>
+
+  {{ $data := newScratch }}
+  {{ $data.Add "totalVotes" (int (.Params.result.for)) }}
+  {{ $data.Add "totalVotes" (int (.Params.result.against)) }}
+  {{ $data.Add "totalVotes" (int (.Params.result.abstain)) }}
+
+  {{ $data.Add "forPercent" (div (mul (int (.Params.result.for)) 100) ($data.Get "totalVotes"))   }}
+  {{ $data.Add "againstPercent" (div (mul (int (.Params.result.against)) 100) ($data.Get "totalVotes"))   }}
+  {{ $data.Add "abstainPercent" (div (mul (int (.Params.result.abstain)) 100) ($data.Get "totalVotes"))   }}
+
+
+  <div class="vote-result-container">
+    <p class="mb-6">Как гласува СОС:</p>
+    <div class="flex flex-col">
+      <div class="flex w-full">
+        <div class="vote-result p-6 pl-2 mb-4 bg-blue-500" style='width: {{ $data.Get "forPercent" }}%'>
+          <span class="vote-count">{{ .Params.result.for }}</span>
+        </div>
+        <span class="flex items-center px-3 mb-4">За</span>
+      </div>
+
+      <div class="flex w-full">
+        <div class="vote-result w-full p-6 pl-2 mb-4 bg-yellow-400" style='width: {{ $data.Get "againstPercent" }}%'>
+          <span class="vote-count">{{ .Params.result.against }}</span>
+        </div>
+        <span class="flex items-center px-3 mb-4">Против</span>
+      </div>
+
+      <div class="flex w-full">
+        <div class="vote-result w-full p-6 pl-2 mb-4 bg-gray-400" style='width: {{ $data.Get "abstainPercent" }}%'>
+          <span class="vote-count">{{ .Params.result.abstain }}</span>
+        </div>
+        <span class="flex items-center px-3 mb-4">Без мнение</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="links document-list">
+    <ul>
+      {{ range .Params.links }}
+	<li><a href="{{ .url }}">{{ .title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+
+</div>

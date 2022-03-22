@@ -1,0 +1,146 @@
+{{ define "main" }}
+
+<main class="container mx-auto px-4 py-24 bg-gray-100">
+  <h1>Имаме План за София</h1>
+  <div class="text-gray-500">
+    Вече 10 години се борим и успяваме да подобрим важни за града проекти и
+    знаем, че можем да дадем много повече. Смятаме, че е време начело на София
+    да застанат хора, които истински я обичат, вярват в потенциала ѝ и знаят как
+    да я преобразят.
+    <p>Вижте нашия <a href="#">План за София.</a></p>
+  </div>
+</main>
+
+<!-- Our Vision section Start -->
+<section class="our-vision flex justify-center px-52">
+  <div class="container">
+    <h2 class="flex text-5xl text-sspurple justify-center py-15">
+      Нашата визия за София, е за...
+    </h2>
+
+    <ul class="grid gap-7 sm:grid-cols-1 lg:grid-cols-3">
+      <li
+        class="card py-20 px-11 flex flex-col justify-between flex-1 items-center"
+      >
+        <div class="max-w-full">
+          <header class="mb-10 flex flex-col justify-between">
+            <span class="icon flex justify-center">
+              <img
+                src="/img/icons/plan-districts.svg"
+                alt="Развитие на кварталите"
+              />
+            </span>
+            <h3
+              class="text-xl text-center text-sspurple font-semibold overflow-hidden truncate"
+            >
+              Развитие на кварталите
+            </h3>
+          </header>
+          <div class="text-center text-base text-sspurple">
+            Съществуващата инфраструктура има нужда от мащабни, цялостни
+            ремонти: преработване на улиците и тротоарите, поставяне на нови
+            паркинги и осветление, инвестиция в междублоковите пространства,
+            изграждане на нови игрища и много други.
+          </div>
+        </div>
+        <a href="#" class="mt-8 text-sspurple"> За развитие на кварталите > </a>
+      </li>
+
+      <li
+        class="card py-20 px-11 flex flex-col justify-between flex-1 items-center"
+      >
+        <div class="max-w-full">
+          <header class="mb-10 flex flex-col justify-between">
+            <span class="icon flex justify-center">
+              <img
+                src="/img/icons/plan-greencity.svg"
+                alt="Развитие на кварталите"
+              />
+            </span>
+            <h3
+              class="text-xl text-center text-sspurple font-semibold overflow-hidden truncate"
+            >
+              Зелен град
+            </h3>
+          </header>
+          <div class="text-center text-sspurple">
+            Всяка година мръсният въздух предизвиква преждевременната смърт на
+            близо 15 000 от нашите майки, бащи, деца и приятели. За да сложим
+            край на това са необходими спешни, радикални мерки, които ние
+            разработваме от години.
+          </div>
+        </div>
+        <a href="#" class="mt-8 text-sspurple">За зелен град ></a>
+      </li>
+
+      <li
+        class="card py-20 px-11 flex flex-col justify-between flex-1 items-center"
+      >
+        <div class="max-w-full">
+          <header class="mb-10 flex flex-col justify-between">
+            <span class="icon flex justify-center">
+              <img
+                src="/img/icons/plan-no-corruption.svg"
+                alt="Развитие на кварталите"
+              />
+            </span>
+            <h3
+              class="text-xl text-center text-sspurple font-semibold overflow-hidden truncate"
+            >
+              Нулева корупция
+            </h3>
+          </header>
+          <div class="text-center text-sspurple">
+            Огромна част от бюджета на София се прахосва за некачествени, скъпи
+            ремонти, лоши услуги и безперспективни инвестиции. Решени сме да
+            сложим край на това и да използваме тези средства за да подобрим
+            всеки аспект от живота на софиянци.
+          </div>
+        </div>
+        <a href="#" class="mt-8 text-sspurple">За прозрачно управление ></a>
+      </li>
+    </ul>
+
+    <div
+      class="card full-card mt-12 mb-40 py-20 pb-16 px-11 flex flex-col justify-between flex-1 items-center"
+    >
+      <div>
+        <h3 class="text-2xl text-center text-sspurple font-semibold pb-12">
+          Цялостната ни визия за по-добър град
+        </h3>
+        <div class="text-center text-sspurple">
+          Огромна част от бюджета на София се прахосва за некачествени, скъпи
+          ремонти, лоши услуги и безперспективни инвестиции. Решени сме да
+          сложим край на това и да използваме тези средства за да подобрим всеки
+          аспект от живота на софиянци.
+        </div>
+      </div>
+      <a
+        href="#"
+        class="mt-8 px-6 bg-sspurple whitespace-nowrap text-white flex p-5 items-center"
+      >
+        Прочети плана
+        <img
+          src="/img/icons/plan-read-more.png"
+          class="ml-5 flex-initial h-5"
+        />
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Our Vision section End -->
+
+<!-- News Carousel start -->
+
+{{ range ( where .Site.RegularPages "Section" "news" | first 3 ) }}
+  <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+{{end}}
+
+
+<!-- News Carousel end -->
+
+	
+	
+	
+
+{{ end }}

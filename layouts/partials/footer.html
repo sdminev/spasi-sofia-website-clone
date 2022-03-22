@@ -1,0 +1,162 @@
+<script src="/js/footer.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        autoplay: true,
+        spaceBetween: 32,
+        autoHeight: true,
+        centeredSlides: true,
+        slidesPerView: 2,
+      
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-dots',
+        },
+      });
+</script>
+<footer class="footer">
+    <div class="flex-container-mobile mobile-footer">
+        <div class="flex-container-column-mobile mobile-footer">
+            <div>
+                <a class="logo" href="/" alt="Спаси София">
+                    <img src="/img/logo.svg" alt="лого" width="100%" height="auto" />
+                </a>
+            </div>
+            <div class="footer-secondary-text">
+                <ul>
+                    <li>
+                        Фондация “Спаси България”
+                    </li>
+                    <li>
+                        София 1715, Пощенска кутия №11 <br> e-mail: info@spasisofia.org
+                    </li>
+                    <li>
+                        Copyright notice <br> Privacy Policy
+                    </li>
+                </ul>
+            </div>
+            <div class="mobile-footer">
+                {{ partial "social.html" . }}
+            </div>
+        </div>
+    </div>
+    <div class="flex-container-footer full-footer">
+        <div class="flex-container-column full-footer">
+            <div>
+                <a class="logo" href="/" alt="Спаси София">
+                    <img src="/img/logo.svg" alt="лого" />
+                </a>
+            </div>
+            <div>
+                <ul class="footer-secondary-text">
+                    <li>
+                        Фондация <br> “Спаси България”
+                    </li>
+                    <li>
+                        София 1715, <br> Пощенска кутия №11 <br> e-mail: <br> info@spasisofia.org
+                    </li>
+                    <li>
+                        Copyright notice <br> Privacy Policy
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex-container-column full-footer">
+            <div>
+                <a href="/">
+          За нас
+        </a>
+            </div>
+        </div>
+        <div class="flex-container-column full-footer">
+            <div>
+                <a href="/plan">
+                    Нашият план
+                </a>
+            </div>
+            <ul class="plan-list footer-secondary-text">
+                <li>
+                    <a href="/plan/transport">
+                        Транспорт и мобилност
+                    </a>
+                </li>
+                <li>
+                    <a href="/plan/urban-environment">
+                        Градска среда
+                    </a>
+                </li>
+                <li>
+                    <a href="/plan/fair-governance/">
+                        Честно управление
+                    </a>
+                </li>
+                <li>
+                    <a href="/plan/cultural-heritage/">
+                        Културно наследство
+                    </a>
+                </li>
+                <li>
+                    <a href="/plan/reconstruction/">
+                        Качествени ремонти
+                    </a>
+                </li>
+                <li>
+                    <a href="/plan/ecology">
+                        Чист въздух и екология
+                    </a>
+                </li>
+                <li>
+                    <a href="/plan/for-citizens/">
+                        Град за хората
+                    </a>
+                </li>
+                <li>
+                    <a href="/plan/for-business/">
+                        Град за бизнес
+                    </a>
+                </li>
+                <li>
+                    <a href="/plan/vitosha/">
+                        Витоша и изворите
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex-container-column full-footer">
+            <div>
+                Екип
+            </div>
+        </div>
+        <div class="flex-container-column full-footer">
+            <div>
+                <a href="/contact">
+                    Контакти
+                </a>
+            </div>
+        </div>
+        <div class="flex-container-column full-footer">
+
+        </div>
+    </div>
+    <div class="footer-social full-footer">
+            {{ partial "social.html" . }}
+    </div>
+    <div class="footer-top-button full-footer">
+        <button onclick="goToTopFunction()" title="Начало">
+            <img src="/uploads/go-to-top-image.png" alt="Начало" width="56" height="56">
+        </button>
+    </div>
+</footer>

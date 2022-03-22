@@ -1,0 +1,98 @@
+<nav class="primary-nav">
+  <div class="nav-container">
+    <div class="navbar-items-container h-37">
+      <a class="logo" href="/" alt="Спаси София">
+        <img src="/img/logo.svg" alt="лого" />
+      </a>
+      <div class="mobile-menu-toggle">
+        <button type="button" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open navigation</span>
+          <img src="/img/hamburger-menu.svg" class="h-12 w-12" />
+        </button>
+        <button type="button" class="hidden" aria-controls="mobile-menu" aria-expanded="true">
+          <span class="sr-only">Close navigation</span>
+          <img src="/img/close-menu.svg" class="h-16 w-16" />
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="secondary-nav">
+  <div class="nav-container">
+    <div class="hidden lg:block" id="mobile-menu">
+      <div class="navbar-items-container">
+        <div class="nav-items-left">
+          <a href="/support" class="mobile-nav-cta">
+            Подкрепи ни
+            <i class="bx bx-chevron-right px-0"></i>
+          </a>
+          <a href="/" class="nav-item {{ if eq . "home" }} active {{ end }}">
+            <i class="bx bx-home-alt"></i>
+            За нас
+          </a>
+          <a href="/plan" class="nav-item {{ if eq . "plan" }} active {{ end }}">
+            <i class="bx bx-trip"></i>
+            План за София
+          </a>
+          <a href="/projects" class="nav-item {{ if eq . "projects" }} active {{ end }}">
+            <i class="bx bx-group"></i>
+            Проекти/Постижения
+          </a>
+          <a href="/news" class="nav-item {{ if eq . "news" }} active {{ end }}">
+            <i class="bx bx-envelope"></i>
+            Новини
+          </a>
+          <a href="/team" class="nav-item {{ if eq . "team" }} active {{ end }}">
+            <i class="bx bx-envelope"></i>
+            Екип
+          </a>
+          <a href="/contact" class="nav-item {{ if eq . "contact" }} active {{ end }}">
+            <i class="bx bx-envelope"></i>
+            Контакти
+          </a>
+          <a href="/volunteer" class="nav-item {{ if eq . "volunteer" }} active {{ end }}">
+            <i class="bx bx-heart"></i>
+            Стани доброволец
+          </a>
+
+          <div class="mobile-nav-footer">
+
+            <a class="social-media-link" href="https://www.facebook.com/spasisofia">
+              <i class="bx bxl-facebook-circle"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+
+            <a class="social-media-link" href="https://www.youtube.com/c/SpasisofiaOrg">
+              <i class="bx bxl-youtube"></i>
+              <span class="sr-only">YouTube</span>
+            </a>
+
+            <a class="social-media-link" href="https://www.instagram.com/spasisofia/">
+              <i class="bx bxl-instagram-alt"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+
+            <a class="social-media-link" href="https://twitter.com/spasisofia">
+              <i class="bx bxl-twitter"></i>
+              <span class="sr-only">Twitter</span>
+            </a>
+
+            <p class="copyright">
+              2010 - 2021 Спаси София, Всички права запазени
+            </p>
+
+          </div>
+        </div>
+
+        <div class="nav-cta-container hidden lg:block">
+          <a class="nav-cta" href="/support">
+            Подкрепи ни
+            <i class="bx bx-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
